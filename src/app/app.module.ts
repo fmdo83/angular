@@ -12,6 +12,7 @@ import {  MailService } from './mail.service';
     AppComponent,
     SimpleFormComponent
   ],
+  entryComponents:[SimpleFormComponent],
   imports: [
     BrowserModule,
     FormsModule,

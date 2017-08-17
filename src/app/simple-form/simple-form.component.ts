@@ -25,8 +25,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, Renderer } f
 })
 export class SimpleFormComponent implements OnInit {
   isMousedown;
-  
-  @Input() message;
+  @Input() message = "default value!";
   @Output() update2 = new EventEmitter();
   @ViewChild('input') input;
 
