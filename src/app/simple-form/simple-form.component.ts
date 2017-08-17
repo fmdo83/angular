@@ -1,18 +1,40 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, Renderer } from '@angular/core';
 
 @Component({
   selector: 'app-simple-form',
   templateUrl: './simple-form.component.html',
-  styles: []
+  styles: [`
+      :host{
+        display:flex;
+        flex-direction: column;
+      }
+
+      .mousedown{
+        border: 2px solid green;
+      }
+
+      input:focus{
+        font-weight: bold;
+        outline: none;
+      }
+
+      button{
+        border: none;
+      }
+  `]
 })
 export class SimpleFormComponent implements OnInit {
+  isMousedown;
+  
   @Input() message;
-  onClick(value) {
-    console.log(value);
-  }
-  constructor() {
-    setInterval(() => this.message = Math.random().toString(), 1000);
+  @Output() update2 = new EventEmitter();
+  @ViewChild('input') input;
+
+  constructor(private renderer: Renderer) {
+    // setInterval(() => this.message = Math.random().toString(), 1000);
    }
-  ngOnInit() {
-  }
+   ngAfterViewInit(){
+    this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
+   }
+   ngOnInit() {}
 }

@@ -1,13 +1,13 @@
 <div> 
-  <ul>  
-    <app-simple-form 
-      *ngFor="let message of mail.messages"
-      [message]="message">
+
+  <ul>
+    <li *ngFor="let message of mail.messages">{{message.text}}</li>
+  </ul>
+
+  <ul>
+    <app-simple-form>
+      Stuff go here!
     </app-simple-form>
-    
-    <li *ngFor="let message of mail.messages">
-      {{message}}
-    </li>
   </ul>
 </div>
 

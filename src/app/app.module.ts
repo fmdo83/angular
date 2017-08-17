@@ -17,9 +17,9 @@ import {  MailService } from './mail.service';
     FormsModule,
     HttpModule
   ],
-  //providers: [MailService],
-  providers: [{provide:'mail', useClass:MailService},
-              {provide:'api', useValue: 'http://localhost:3000/'}],
+  // providers: [MailService],
+  providers: [{provide: 'mail', useClass: MailService},
+              {provide: 'api', useValue: 'http://localhost:3000/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
