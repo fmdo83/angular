@@ -27,13 +27,13 @@ export class SimpleFormComponent implements OnInit {
   isMousedown;
   @Input() message = "default value!";
   @Output() update2 = new EventEmitter();
-  @ViewChild('input') input;
+  @ViewChild('myInput') input;
 
   constructor(private renderer: Renderer) {
     // setInterval(() => this.message = Math.random().toString(), 1000);
    }
    ngAfterViewInit(){
-    this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
+    //this.renderer.invokeElementMethod(this.input.nativeElement, 'focus');
    }
    ngOnInit() {}
 }

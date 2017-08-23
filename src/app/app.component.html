@@ -3,13 +3,11 @@
   <ul>
     <li *ngFor="let message of mail.messages">{{message.text}}</li>
   </ul>
-
-  <ul>
-    <app-simple-form>
-      Stuff go here!
-    </app-simple-form>
-  </ul>
-
-  <div #container></div>
+ <button (click)="onClick()">Move Component</button>
+ <div #container></div>
 </div>
+<template #template let-description="description">
+  <h2>My {{description}} template</h2>
+  <button>My {{description}} button</button>
+</template>
 
